@@ -82,19 +82,6 @@ const initScrollSpy = function () {
   }
 };
 
-const navbarScrollInit = () => {
-  var navbar = document.querySelector(".fbs__net-navbar");
-
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (navbar) {
-    if (scrollTop > 0) {
-      navbar.classList.add("active");
-    } else {
-      navbar.classList.remove("active");
-    }
-  }
-};
-
 const navbarInit = () => {
   document.querySelectorAll('.dropdown-toggle[href="#"]').forEach(function (el, index) {
     el.addEventListener("click", function (event) {
@@ -219,7 +206,6 @@ const logoMarqueeInit = () => {
 initScrollSpy();
 if (typeof gsap !== "undefined") logoMarqueeInit();
 navbarInit();
-window.addEventListener("scroll", navbarScrollInit);
 
 // ======= Swiper =======
 const swiperInit = () => {
