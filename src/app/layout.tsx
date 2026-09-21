@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Source_Serif_4 } from "next/font/google";
 import "./globals.css";
+import "./site-tailwind.css";
 import { basePath, siteUrl } from "@/lib/basePath";
+
+const sourceSerif = Source_Serif_4({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -89,7 +97,7 @@ export default function RootLayout({
           strategy="lazyOnload"
         />
       </head>
-      <body>
+      <body className={sourceSerif.variable}>
         {children}
         <div className="whatsapp-float-container" id="whatsapp-connect">
           <a

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./page.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { AnnouncementBar } from "@/components/site/announcement-bar";
+import { Nav } from "@/components/site/nav";
+import { Footer } from "@/components/site/footer";
 import {
   Button,
   Section,
@@ -162,7 +163,8 @@ export default function Portfolio() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <div className="site-wrap portfolio-page">
-        <Navbar activePage="portfolio" />
+        <AnnouncementBar />
+        <Nav />
         <main id="main-content">
           <Section className="portfolio-hero" id="portfolio-hero">
             <Container>

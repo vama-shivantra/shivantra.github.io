@@ -1,0 +1,58 @@
+.careers-hero-art {
+  max-width: 660px;
+  margin: 40px auto 0;
+}
+.careers-hero-art .v19-live-art {
+  max-height: 350px;
+}
+.careers-art-caption {
+  display: flex;
+  justify-content: center;
+  gap: clamp(24px, 6vw, 72px);
+  color: #797776;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.careers-benefit {
+  min-width: 0;
+  transition:
+    border-color 300ms ease,
+    box-shadow 300ms ease,
+    translate 300ms ease;
+}
+.careers-benefit-art {
+  margin-top: auto;
+  padding-top: 24px;
+}
+.careers-benefit-art .v19-live-art {
+  max-height: 220px;
+}
+@media (min-width: 1024px) {
+  .careers-benefit {
+    grid-column: span 2;
+  }
+  .careers-benefit:nth-child(n + 4) {
+    grid-column: span 3;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .careers-benefit:last-child {
+    grid-column: 1 / -1;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .careers-benefit:hover {
+    translate: 0 -5px;
+    border-color: #2b59d1;
+    box-shadow: 0 16px 36px rgb(36 36 36 / 6%);
+  }
+}
+@media (max-width: 639px) {
+  .careers-hero-art {
+    margin-top: 24px;
+  }
+  .careers-benefit-art .v19-live-art {
+    max-height: 190px;
+  }
+}

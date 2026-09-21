@@ -1,0 +1,539 @@
+.why-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+}
+
+.why-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px;
+  border: 1px solid #cecac8;
+  padding: 40px;
+  background: #f6f3f1;
+  transition: border-color 0.3s ease;
+}
+
+.why-card:hover {
+  border-color: #2b59d1;
+}
+
+.why-card-tall {
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.why-card-wide {
+  grid-column: 1 / -1;
+}
+
+.why-card-split {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  height: 100%;
+}
+
+@media (min-width: 860px) {
+  .why-card-split {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .why-card-split .why-copy {
+    max-width: 300px;
+    flex-shrink: 0;
+  }
+}
+
+.why-num {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #a0b5eb;
+}
+
+.why-card:hover .why-num {
+  color: #2b59d1;
+}
+
+.why-card h3 {
+  margin-top: 12px;
+  font-family: var(--font-serif);
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #242424;
+}
+
+.why-card p {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.35;
+  color: #4e4d4d;
+}
+
+/* --- Illustration 1: racing delivery-speed bars --- */
+.why-race {
+  position: relative;
+  margin-top: 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.why-race-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.why-race-row span {
+  width: 72px;
+  flex-shrink: 0;
+  font-family: var(--font-diatype-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: -0.033em;
+  color: #4e4d4d;
+}
+
+.why-race-track {
+  flex: 1;
+  height: 10px;
+  border-radius: 9999px;
+  background: #eae6e3;
+  border: 1px solid #cecac8;
+  overflow: hidden;
+}
+
+.why-race-fill {
+  height: 100%;
+  border-radius: 9999px;
+  animation: why-race 2.8s ease-in-out infinite;
+  transform-origin: left;
+}
+
+/* --- Illustration 2: orbiting satellite nodes --- */
+.why-orbit2 {
+  position: relative;
+  width: 176px;
+  height: 176px;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+.why-orbit2-core {
+  position: absolute;
+  inset: 62px;
+  border-radius: 9999px;
+  background: conic-gradient(from 45deg, #ff9473, #ecda98, #a7fccd, #a0b5eb, #ff9473);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(36, 36, 36, 0.1);
+}
+
+.why-orbit2-core span {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background: #f6f3f1;
+  border: 1px solid rgba(36, 36, 36, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-orbit2-core svg {
+  color: #2b59d1;
+}
+
+.why-orbit2-ring {
+  position: absolute;
+  border: 1px dashed #cecac8;
+  border-radius: 9999px;
+  animation: why-orbit-spin linear infinite;
+}
+
+.ring-a {
+  inset: 14px;
+  animation-duration: 9s;
+}
+
+.ring-b {
+  inset: 0;
+  animation-duration: 15s;
+  animation-direction: reverse;
+}
+
+.why-orbit2-node {
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 6px rgba(36, 36, 36, 0.15);
+}
+
+/* --- Illustration 3: radar / sync pulse --- */
+.why-radar {
+  position: relative;
+  width: 176px;
+  height: 176px;
+  flex-shrink: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-radar-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
+  border-radius: 9999px;
+  border: 1.5px solid #2b59d1;
+  animation: why-radar-ping 3s ease-out infinite;
+}
+
+.why-radar-core {
+  position: relative;
+  z-index: 1;
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  background: #f6f3f1;
+  border: 1px solid #cecac8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(36, 36, 36, 0.08);
+}
+
+.why-radar-core svg {
+  color: #2b59d1;
+}
+
+/* --- Illustration 4: engagement model stack --- */
+.why-stack-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: stretch;
+  flex: 1;
+  padding: 20px 0;
+  min-width: 0;
+  width: 100%;
+}
+
+@media (min-width: 860px) {
+  .why-stack-wrap {
+    flex-direction: row;
+    align-items: center;
+    min-width: 260px;
+  }
+}
+
+.why-stack {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  min-height: 100px;
+}
+
+@media (min-width: 860px) {
+  .why-stack {
+    min-height: 110px;
+  }
+}
+
+.why-stack-card {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  max-width: 190px;
+  border-radius: 24px;
+  border: 1px solid #cecac8;
+  background: #f6f3f1;
+  padding: 20px;
+  box-shadow: 0 10px 24px rgba(36, 36, 36, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.why-stack-card:not(:first-child) {
+  margin-left: -46px;
+}
+
+@media (max-width: 859px) {
+  .why-stack-card {
+    padding: 14px 12px;
+  }
+
+  .why-stack-card:not(:first-child) {
+    margin-left: -20px;
+  }
+
+  .why-stack-card-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .why-stack-card h4 {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+
+  .why-stack-card ul {
+    margin-top: 5px;
+  }
+
+  .why-stack-card li {
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+  .why-stack-check {
+    top: 10px;
+    right: 10px;
+  }
+
+  .why-stack-check svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+.why-stack:hover .why-stack-card {
+  transform: translateY(-4px);
+}
+
+.why-stack-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  border: 1px solid #cecac8;
+  background: #f6f3f1;
+}
+
+.why-stack-card-icon svg {
+  color: #2b59d1;
+}
+
+.why-stack-check {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: #2b59d1;
+}
+
+.why-stack-card h4 {
+  margin-top: 12px;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: #242424;
+}
+
+.why-stack-card ul {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.why-stack-card li {
+  font-family: var(--font-diatype-mono);
+  font-size: 11px;
+  color: #4e4d4d;
+}
+
+@keyframes why-race {
+  0%,
+  100% {
+    transform: scaleX(0.3);
+  }
+
+  50% {
+    transform: scaleX(0.92);
+  }
+}
+
+@keyframes why-orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes why-radar-ping {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-race-fill,
+  .why-orbit2-ring,
+  .why-radar-ring {
+    animation: none;
+  }
+}
+
+@media (max-width: 719px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-card-tall {
+    grid-row: auto;
+  }
+
+  .why-stack-card:not(:first-child) {
+    margin-left: -28px;
+  }
+}
+.why-live-tall {
+  margin: auto 0;
+  padding-top: 35px;
+}
+.why-live-tall .v19-live-art {
+  max-height: 360px;
+}
+.why-live-labels {
+  display: flex;
+  justify-content: space-around;
+  font-size: 11px;
+  color: #797776;
+}
+.why-live-side {
+  min-width: 0;
+  flex: 1;
+}
+.why-live-side .v19-live-art {
+  min-height: 170px;
+}
+.why-live-outcomes {
+  flex: 1;
+  min-width: 0;
+}
+.why-live-outcomes > .v19-live-art {
+  max-height: 180px;
+}
+.why-live-outcomes .why-stack {
+  width: 100%;
+}
+@media (min-width: 860px) {
+  .why-card-split .why-copy {
+    max-width: 48%;
+    flex-shrink: 1;
+  }
+  .why-live-side {
+    width: 48%;
+  }
+}
+@media (max-width: 600px) {
+  .why-card {
+    padding: 28px;
+  }
+  .why-live-side .v19-live-art {
+    max-height: 230px;
+  }
+}
+
+/* The illustration now has the whole right-hand column to itself (the
+   three engagement types moved into a plain list under the copy), so it
+   can render larger without starving anything else of space. */
+.why-live-outcomes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+.why-live-outcomes > .v19-live-art {
+  max-height: 260px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.why-outcome-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.why-outcome-list li {
+  position: relative;
+  padding-left: 20px;
+  font-family: var(--font-diatype-mono);
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: #242424;
+}
+
+.why-outcome-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #2b59d1;
+}
+
+@media (min-width: 860px) {
+  .why-live-outcomes {
+    min-height: 260px;
+  }
+}
+
+/* Reserve a real column for the illustration; long copy must not collapse it. */
+.why-card-wide .why-stack-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 36px;
+}
+.why-card-wide .why-copy {
+  min-width: 0;
+}
+.why-card-wide .why-live-outcomes {
+  width: 100%;
+  min-height: 260px;
+}
+.why-card-wide .why-live-outcomes > .v19-live-art {
+  width: 100%;
+  max-height: 340px;
+}
+@media (max-width: 767px) {
+  .why-card-wide .why-stack-wrap {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .why-card-wide .why-live-outcomes {
+    min-height: 0;
+  }
+}

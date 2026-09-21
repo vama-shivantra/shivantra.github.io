@@ -1,0 +1,465 @@
+.svc-illus {
+  position: relative;
+  margin-top: 32px;
+  height: 128px;
+}
+
+/* --- stack: overlapping mini cards (used on the featured card) --- */
+.svc-illus-stack {
+  position: relative;
+  height: 100%;
+}
+
+.svc-illus-stack .svc-mini-card {
+  position: absolute;
+  top: 6px;
+  width: 88px;
+  height: 100px;
+  border-radius: 16px;
+  border: 1px solid #cecac8;
+  background: #f6f3f1;
+  box-shadow: 0 8px 18px rgba(36, 36, 36, 0.06);
+  transition: transform 0.4s ease;
+  animation: svc-card-glow 3.2s ease-in-out infinite;
+}
+
+.svc-illus-stack .svc-mini-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.svc-illus-stack .svc-mini-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.svc-blob-pulse {
+  animation: svc-blob-pulse 4.5s ease-in-out infinite;
+}
+
+.svc-blob-drift {
+  animation: svc-blob-drift 6.5s ease-in-out infinite;
+}
+
+.svc-illus-stack .svc-mini-card:nth-child(1) {
+  left: 0;
+  transform: rotate(-4deg);
+}
+
+.svc-illus-stack .svc-mini-card:nth-child(2) {
+  left: 36px;
+  transform: rotate(2deg);
+}
+
+.svc-illus-stack .svc-mini-card:nth-child(3) {
+  left: 72px;
+  transform: rotate(-2deg);
+}
+
+.service-card:hover .svc-illus-stack .svc-mini-card:nth-child(1) {
+  transform: translate(-4px, -2px) rotate(-8deg);
+}
+
+.service-card:hover .svc-illus-stack .svc-mini-card:nth-child(3) {
+  transform: translate(4px, -2px) rotate(6deg);
+}
+
+/* --- browser: window chrome with content lines (Web Development) --- */
+.svc-illus-browser {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.svc-browser {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid #cecac8;
+  background: #f6f3f1;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(36, 36, 36, 0.05);
+}
+
+.svc-browser-bar {
+  display: flex;
+  gap: 5px;
+  padding: 9px 12px;
+  border-bottom: 1px solid #cecac8;
+}
+
+.svc-browser-bar span {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  opacity: 0.8;
+}
+
+.svc-browser-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.svc-line {
+  height: 6px;
+  border-radius: 4px;
+  animation: svc-shimmer 2.8s ease-in-out infinite;
+}
+
+/* --- phone: mobile frame with UI bars (Mobile Development) --- */
+.svc-illus-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.svc-phone {
+  position: relative;
+  width: 66px;
+  height: 118px;
+  border-radius: 16px;
+  border: 2px solid #242424;
+  background: #f6f3f1;
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.svc-phone-notch {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  border-radius: 9999px;
+  background: #242424;
+}
+
+.svc-phone-bar {
+  width: 100%;
+  height: 7px;
+  border-radius: 4px;
+  animation: svc-shimmer 2.8s ease-in-out infinite;
+}
+
+.svc-phone-bar.svc-short {
+  width: 60%;
+  animation-delay: 0.3s;
+}
+
+.svc-phone-dot {
+  margin-top: auto;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  animation: svc-pulse 2.4s ease-in-out infinite;
+}
+
+/* --- network: connected nodes graph (SaaS Development) --- */
+.svc-illus-network {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.svc-network-svg {
+  width: 100%;
+  height: 96px;
+}
+
+.svc-net-node {
+  animation: svc-pulse 2.6s ease-in-out infinite;
+}
+
+.svc-net-core {
+  animation: svc-core-pulse 2.6s ease-in-out infinite;
+}
+
+/* --- database: stacked discs (ERP & CRM Development) --- */
+.svc-illus-db {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 10px;
+}
+
+.svc-db-disc {
+  width: 72px;
+  height: 26px;
+  border-radius: 9999px;
+  border: 2px solid;
+  background: #f6f3f1;
+  animation: svc-float 3.2s ease-in-out infinite;
+}
+
+/* --- rocket: launch trail (MVP Development) --- */
+.svc-illus-rocket {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+}
+
+.svc-rocket-trail {
+  position: absolute;
+  bottom: 6px;
+  width: 10px;
+  height: 70px;
+  border-radius: 9999px;
+  opacity: 0.5;
+  animation: svc-trail 1.8s ease-in-out infinite;
+}
+
+.svc-rocket-icon {
+  position: relative;
+  z-index: 1;
+  animation: svc-float 2.6s ease-in-out infinite;
+}
+
+/* --- canvas: design tool mockup (UI/UX Design) --- */
+.svc-illus-canvas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.svc-canvas-frame {
+  position: relative;
+  width: 120px;
+  height: 96px;
+  border-radius: 14px;
+  border: 1px solid #cecac8;
+  background: #f6f3f1;
+}
+
+.svc-canvas-shape {
+  position: absolute;
+  border: 2px solid;
+  background: transparent;
+}
+
+.svc-canvas-circle {
+  top: 16px;
+  left: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  animation: svc-pulse 3s ease-in-out infinite;
+}
+
+.svc-canvas-square {
+  bottom: 14px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  transform: rotate(8deg);
+}
+
+.svc-cursor {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  animation: svc-cursor-move 3.6s ease-in-out infinite;
+}
+
+/* --- chart: growth bars (SEO Services) --- */
+.svc-illus-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+}
+
+.svc-chart-bar {
+  width: 16px;
+  border-radius: 6px 6px 2px 2px;
+  animation: svc-grow 2.4s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+/* --- avatars: team stack (Staffing Services) --- */
+.svc-illus-avatars {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.svc-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  border: 2px solid #f6f3f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f6f3f1;
+  margin-left: -12px;
+  transition: transform 0.3s ease;
+}
+
+.svc-avatar:first-child {
+  margin-left: 0;
+}
+
+.service-card:hover .svc-avatar {
+  transform: translateX(2px);
+}
+
+.svc-avatar-plus {
+  background: #f6f3f1;
+  border: 1px dashed #cecac8;
+  color: #4e4d4d;
+  font-family: var(--font-diatype-mono);
+  font-size: 10px;
+}
+
+@keyframes svc-shimmer {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes svc-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes svc-core-pulse {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(43, 89, 209, 0.5));
+  }
+}
+
+@keyframes svc-float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(3px, -5px);
+  }
+}
+
+@keyframes svc-trail {
+  0% {
+    opacity: 0.6;
+    transform: scaleY(0.8) translateY(6px);
+  }
+
+  50% {
+    opacity: 0.15;
+    transform: scaleY(1.1) translateY(-4px);
+  }
+
+  100% {
+    opacity: 0.6;
+    transform: scaleY(0.8) translateY(6px);
+  }
+}
+
+@keyframes svc-cursor-move {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-14px, -18px);
+  }
+}
+
+@keyframes svc-card-glow {
+  0%,
+  100% {
+    opacity: 0.88;
+    box-shadow: 0 8px 18px rgba(36, 36, 36, 0.06);
+  }
+
+  50% {
+    opacity: 1;
+    box-shadow: 0 14px 28px rgba(36, 36, 36, 0.1);
+  }
+}
+
+@keyframes svc-blob-pulse {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+
+  50% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes svc-blob-drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-14px, 12px);
+  }
+}
+
+@keyframes svc-grow {
+  0%,
+  100% {
+    transform: scaleY(0.75);
+  }
+
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svc-line,
+  .svc-phone-bar,
+  .svc-phone-dot,
+  .svc-net-node,
+  .svc-net-core,
+  .svc-db-disc,
+  .svc-rocket-trail,
+  .svc-rocket-icon,
+  .svc-canvas-circle,
+  .svc-cursor,
+  .svc-chart-bar,
+  .svc-illus-stack .svc-mini-card,
+  .svc-blob-pulse,
+  .svc-blob-drift {
+    animation: none;
+  }
+}

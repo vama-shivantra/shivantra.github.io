@@ -1,4 +1,16 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
+/*
+ * Explicit layer priority (later = higher priority): Tailwind's preflight
+ * ("base") must lose to Bootstrap, since Bootstrap still styles every
+ * pre-existing page - but Tailwind's utility classes ("utilities") must
+ * still win, since the new design (Nav/Footer + the (home) route group)
+ * relies on them. This statement must run before Tailwind's own internal
+ * "@layer theme, base, components, utilities;" declaration (in
+ * site-tailwind.css) so this relative order sticks; Tailwind's later
+ * declaration only affects layers it lists, and doesn't move "bootstrap".
+ */
+@layer theme, base, bootstrap, components, utilities;
+
+@import 'bootstrap/dist/css/bootstrap.min.css' layer(bootstrap);
 
 html {
   scroll-behavior: smooth;
@@ -71,6 +83,9 @@ body {
   color: var(--bs-white);
 }
 
+/* Legacy element defaults belong below the modern site utilities. */
+@layer bootstrap {
+
 a {
   -webkit-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out;
@@ -91,6 +106,8 @@ h6 {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.015em;
+}
+
 }
 
 .skip-link {

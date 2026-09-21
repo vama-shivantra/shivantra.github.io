@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./page.css";
 import "@/components/FAQ.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { AnnouncementBar } from "@/components/site/announcement-bar";
+import { Nav } from "@/components/site/nav";
+import { Footer } from "@/components/site/footer";
 import { FAQItem } from "@/components/FAQListing";
 import {
   Button,
@@ -446,7 +447,8 @@ export default function BusinessWebsiteDevelopment() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <div className="site-wrap business-website-page">
-        <Navbar activePage="services" />
+        <AnnouncementBar />
+        <Nav />
         <main id="main-content">
           <Section>
             <Container>

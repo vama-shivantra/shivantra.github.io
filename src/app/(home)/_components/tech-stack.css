@@ -1,0 +1,249 @@
+.tech-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px;
+  background: #cfdaf5;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .tech-card {
+    grid-template-columns: 1fr 1fr;
+    padding: 56px;
+  }
+}
+
+.tech-copy p:first-child {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: -0.033em;
+  color: #4e4d4d;
+}
+
+.tech-copy h2 {
+  margin-top: 12px;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #242424;
+}
+
+.tech-copy p:nth-child(3) {
+  margin-top: 16px;
+  max-width: 380px;
+  font-size: 16px;
+  line-height: 1.35;
+  color: #4e4d4d;
+}
+
+.tech-copy a {
+  margin-top: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  border-radius: 9999px;
+  background: #242424;
+  color: #f6f3f1;
+  font-family: var(--font-diatype-mono);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  transition: opacity 0.2s ease;
+}
+
+.tech-copy a:hover {
+  opacity: 0.85;
+}
+
+.tech-stat-row {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-diatype-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: -0.033em;
+  color: #4e4d4d;
+}
+
+.tech-stat-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: #2b59d1;
+  flex-shrink: 0;
+}
+
+.tech-viewport {
+  position: relative;
+  height: 272px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 14%, black 86%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 14%, black 86%, transparent);
+}
+
+.tech-chevrons {
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.tech-chevron {
+  width: 46px;
+  height: 46px;
+  margin-left: -32px;
+  border-top: 1.5px solid #a0b5eb;
+  border-right: 1.5px solid #a0b5eb;
+  transform: rotate(45deg);
+  animation: tech-chevron-pulse 2.4s ease-in-out infinite;
+}
+
+.tech-chevron:first-child {
+  margin-left: 0;
+}
+
+.tech-track {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  animation: tech-scroll 16s linear infinite;
+}
+
+.tech-viewport:hover .tech-track {
+  animation-play-state: paused;
+}
+
+@keyframes tech-scroll {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes tech-chevron-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    border-color: #a0b5eb;
+  }
+
+  50% {
+    opacity: 0.9;
+    border-color: #2b59d1;
+  }
+}
+
+@keyframes tech-row-wave {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(22px);
+  }
+}
+
+.tech-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 13px 4px;
+  animation: tech-row-wave 5s ease-in-out infinite;
+}
+
+.tech-row:nth-child(odd) {
+  animation-delay: -1.25s;
+}
+
+.tech-row:nth-child(4n) {
+  animation-delay: -2.5s;
+}
+
+.tech-row:nth-child(4n + 2) {
+  animation-delay: -3.75s;
+}
+
+.tech-row-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: #f6f3f1;
+  border: 1px solid rgba(36, 36, 36, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-row-icon svg {
+  color: #2b59d1;
+}
+
+.tech-row span {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #242424;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-track,
+  .tech-chevron,
+  .tech-row {
+    animation: none;
+  }
+}
+.tech-live-system {
+  min-width: 0;
+}
+.tech-live-system .v19-live-art {
+  max-height: 330px;
+}
+.tech-live-labels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.tech-live-labels > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f6f3f1b3;
+  border: 1px solid #aeb9d0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #343e55;
+}
+.tech-live-labels svg {
+  color: #2b59d1;
+}
+@media (max-width: 600px) {
+  .tech-card {
+    padding: 28px;
+  }
+  .tech-live-labels > div {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+}

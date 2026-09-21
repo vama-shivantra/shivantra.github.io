@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* Scoped defaults override Bootstrap but allow utility spacing, colors and
+   hover states to win. Unlayered resets here would erase those utilities. */
+@layer components {
+  .shiv-home a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+  .shiv-home button {
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+  }
+  .shiv-home h1,
+  .shiv-home h2,
+  .shiv-home h3,
+  .shiv-home h4,
+  .shiv-home h5,
+  .shiv-home h6,
+  .shiv-home p {
+    margin: 0;
+  }
+  .shiv-home ul,
+  .shiv-home ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .shiv-home input,
+  .shiv-home textarea {
+    font: inherit;
+    color: inherit;
+    background: none;
+  }
+
+  .shiv-home :is(h1, h2, h3, h4, h5, h6) {
+    font-weight: 400;
+  }
+}
+
+.shiv-home :is(a, button, input, textarea):focus-visible {
+  outline: 2px solid #2b59d1;
+  outline-offset: 5px;
+}
+.shiv-home section[id] {
+  scroll-margin-top: 24px;
+}
+/* Buttons stay still; hover changes only their colors. */
+.shiv-home .simple-button {
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+.shiv-home .simple-button:hover {
+  opacity: 1;
+}
+.shiv-home .simple-button.bg-\[\#2b59d1\]:hover {
+  background-color: #2146a8;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .shiv-home *,
+  .shiv-home *::before,
+  .shiv-home *::after {
+    animation: none !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}
