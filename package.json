@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "deploy": "NEXT_PUBLIC_BASE_PATH=/shivantra.github.io next build && gh-pages -d out --dotfiles",
+    "deploy:domain": "next build && gh-pages -d out --dotfiles",
     "lint": "next lint",
     "format": "prettier --write \"**/*.{ts,tsx,css,json}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,css,json}\""
@@ -39,6 +41,7 @@
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "gh-pages": "^6.3.0",
     "prettier": "^3.5.3",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.0.0"
